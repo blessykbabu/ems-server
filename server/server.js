@@ -13,6 +13,11 @@ app.use(express.json());
 app.use(authRouter);
 app.use(userRouter);
 
+//test api
+app.get('/test',(req, res)=> {
+    res.status(200).send("Test successful");
+})
+
 conn().then(() => {
     app.listen(process.env.PORT, error => {
         if(error) {
